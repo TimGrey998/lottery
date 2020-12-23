@@ -36,20 +36,18 @@ public class Login extends HttpServlet {
 		// TODO Auto-generated method stub
 		switch (request.getMethod().toLowerCase()) {
 		case "get":
-			request.getRequestDispatcher("/WEB-INF/page/login.jsp").forward(request, response);
+			request.getRequestDispatcher("/login.jsp").forward(request, response);
 			break;
 		case "post":
 			String name = request.getParameter("name");
 			String pwd = request.getParameter("pwd");
 			AdminBiz biz = new AdminBizImpl();
 			Admin admin = biz.checkUser(name, pwd);
-			System.out.print("验证成功"+admin);
 			if (admin == null) {
 				request.setAttribute("message", "用户名或密码错误");
-				request.getRequestDispatcher("/WEB-INF/page/login.jsp").forward(request, response);
+				request.getRequestDispatcher("/login.jsp").forward(request, response);
 			} else {
-				System.out.print("即将跳转");
-				request.getRequestDispatcher("/WEB-INF/page/admin/admin.jsp").forward(request, response);
+				request.getRequestDispatcher("/WEB-INF/page/admin/main.jsp").forward(request, response);
 			}
 			break;
 		}
