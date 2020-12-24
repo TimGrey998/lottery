@@ -28,7 +28,6 @@
                     <input type="radio" name="level" value="0" title="不分等级" <%=prize.getLevel()==0?"checked":"" %> />
                 </div>
             </div>
-            
                <div class="layui-form-item">
                 <label class="layui-form-label" >奖品图片</label>
                 <div class="layui-input-block">

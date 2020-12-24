@@ -5,7 +5,6 @@
 <style>
 .layui-top-box {
 	padding: 40px 20px 20px 20px;
-	color: #fff
 }
 
 .panel-title {
@@ -21,7 +20,6 @@
 	font-size: 75%;
 	font-weight: 700;
 	line-height: 1;
-	color: #fff;
 	text-align: center;
 	white-space: nowrap;
 	vertical-align: baseline;
@@ -37,7 +35,7 @@
 	height: 40px;
 }
 
-.prize-card {
+.prize-card,.prize-card-go,.prize-card-plus {
 	display: block;
 	color: #fff;
 	background-color: #2f4056;
@@ -47,8 +45,13 @@
 	padding: 10px 15px;
 	height: 120px;
 }
-
-.prize-card:hover {
+.prize-card-go {
+	background-color:rgb(95,184,120);
+}
+.prize-card-plus {
+	background-color:#ffc85c;
+}
+.prize-card:hover,.prize-card-go:hover,.prize-card-plus:hover {
 	transform: scale(1.02);
 	transition: 0.5s;
 }
@@ -75,7 +78,7 @@ a:hover {
 	font-size: 50px;
 }
 
-.fa-plus-square-o {
+.fa-plus-square-o,.fa-gamepad {
 	font-size: 30px;
 	color: #fff;
 }
@@ -143,8 +146,11 @@ a:hover {
 			<%
 			}
 			%>
+			<%
+				if(prizes.size() < 3) {
+			%>
 			<div class="layui-col-md4">
-				<a class="prize-card" layuimini-content-href="/lottery/addPrize" data-title="添加奖品">
+				<a class="prize-card-plus" layuimini-content-href="/lottery/addPrize" data-title="添加奖品">
 					<div class="plus-container">
 						<div>
 							<i class="fa fa-plus-square-o"></i> <span class="notice"
@@ -153,7 +159,20 @@ a:hover {
 					</div>
 				</a>
 			</div>
-
+			<%
+				}
+			%>
+			<div class="layui-col-md4">
+				<a class="prize-card-go" href="/lottery/goLottery" data-title="添加奖品">
+					<div class="plus-container">
+						<div>
+							<i class="fa fa-gamepad"></i> <span class="notice"
+								style="margin: 5px; color: #fff;">开始抽奖吧！</span>
+						</div>
+					</div>
+				</a>
+			</div>
+			
 		</div>
 
 		<div class="layui-box">

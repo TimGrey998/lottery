@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
-
-import com.jspsmart.upload.SmartUpload;
 import com.lottery.biz.PrizeBiz;
 import com.lottery.biz.impl.PrizeBizImpl;
 import com.lottery.entity.Prize;
@@ -25,7 +23,6 @@ public class AddPrize extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
-		System.out.println("通过"+request.getMethod()+"方法到达addprize");
 		switch(request.getMethod().toLowerCase()) {
 		case "get":
 			request.getRequestDispatcher("/WEB-INF/page/admin/addPrize.jsp").forward(request,response);
@@ -46,7 +43,7 @@ public class AddPrize extends HttpServlet {
 			prize.setImage(filename);
 			prize.setDesc(request.getParameter("desc"));
 			biz.addPrize(prize);
-			request.getRequestDispatcher("/WEB-INF/page/admin/main.jsp").forward(request,response);
+			response.sendRedirect("/lottery/main.jsp");
 			break;
 		}
 	}
