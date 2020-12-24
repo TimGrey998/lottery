@@ -1,5 +1,7 @@
 package com.lottery.biz.impl;
 
+import java.util.List;
+
 import com.lottery.biz.PlayerBiz;
 import com.lottery.dao.PlayerDao;
 import com.lottery.dao.impl.PlayerDaoImpl;
@@ -11,6 +13,13 @@ public class PlayerBizImpl implements PlayerBiz {
 	@Override
 	public void addPlayer(Player player) {
 		dao.insertPlayer(player);
+	}
+
+	@Override
+	public List<Player> getPlayer() {
+		// TODO Auto-generated method stub
+		List<Player> players = dao.getPlayers();
+		return players;
 	}
 
 }

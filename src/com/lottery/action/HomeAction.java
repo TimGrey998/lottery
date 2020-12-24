@@ -34,14 +34,13 @@ public class HomeAction extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		PrizeBiz biz = new PrizeBizImpl();
-		System.out.println("到达homepage"+request.getMethod());
 		switch(request.getMethod().toLowerCase()) {
 		case "get":
 			List<Prize> prizes = biz.getPrizes();
 			request.setAttribute("prizes", prizes);
 			request.getRequestDispatcher("/WEB-INF/page/admin/home.jsp").forward(request, response);
 			break;
-		case "switch":
+		case "post":
 			break;
 		}
 	}

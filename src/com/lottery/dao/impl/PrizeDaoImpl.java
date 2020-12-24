@@ -43,7 +43,8 @@ public class PrizeDaoImpl implements PrizeDao {
 	@Override
 	public void changeInfo(Prize prize) {
 		// TODO Auto-generated method stub/
-		String sql = "update prize set prizename=?,level=?,image=?,desc=? where id=?";
+		String sql = " update prize set prizeName=?, level=?, image=?, `desc`=? where prizeId=?";
+		BaseDao.executeUpdate(sql,prize.getPrizeName(),prize.getLevel(),prize.getImage(),prize.getDesc(),prize.getPrizeId());
 	}
 
 	@Override

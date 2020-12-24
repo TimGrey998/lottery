@@ -18,7 +18,6 @@ public class PrizeBizImpl implements PrizeBiz {
 	@Override
 	public List<Prize> getPrizes() {
 		// TODO Auto-generated method stub
-		System.out.println("到达Biz层(prize)");
 		List<Prize> prizes = dao.getPrizes();
 		return prizes;
 	}
@@ -27,6 +26,12 @@ public class PrizeBizImpl implements PrizeBiz {
 	public Prize getPrizeInfo(int id) {
 		// TODO Auto-generated method stub
 		return dao.getInfo(id);
+	}
+
+	@Override
+	public void changePrize(Prize prize) {
+		// TODO Auto-generated method stub
+		dao.changeInfo(prize);
 	}
 
 }

@@ -34,12 +34,15 @@ public class AddPrize extends HttpServlet {
 			Prize prize = new Prize();
 			PrizeBiz biz = new PrizeBizImpl();
 			prize.setPrizeName(request.getParameter("prizeName"));
-			prize.setLevel(1);
+			prize.setLevel(Integer.parseInt(request.getParameter("level")));
 			Part part= request.getPart("image");
-			String exname=part.getSubmittedFileName().substring(part.getSubmittedFileName().lastIndexOf("."));
-			String filename=StringUtil.randomString()+exname;
-			String path=request.getServletContext().getRealPath("/img/prizes/"+filename);
-			part.write(path);
+			String filename = "";
+			if(part!=null) {
+				String exname=part.getSubmittedFileName().substring(part.getSubmittedFileName().lastIndexOf("."));
+				filename=StringUtil.randomString()+exname;
+				String path=request.getServletContext().getRealPath("/img/prizes/"+filename);
+				part.write(path);
+			}
 			prize.setImage(filename);
 			prize.setDesc(request.getParameter("desc"));
 			biz.addPrize(prize);

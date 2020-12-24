@@ -8,9 +8,10 @@
         </fieldset>
 		<%
 			Prize prize = (Prize)request.getAttribute("prize");
-			System.out.println(prize.getLevel()==1);
+			System.out.println("prizeinfo,print:"+prize.getPrizeId());
+			session.setAttribute("id", prize.getPrizeId());
 		%>
-        <form class="layui-form" action="addPrize" lay-filter="example" method="POST">
+        <form class="layui-form" action="updatePrize" lay-filter="example" method="POST" enctype="multipart/form-data">
             <div class="layui-form-item">
                 <label class="layui-form-label">奖品名称</label>
                 <div class="layui-input-block">
@@ -21,17 +22,18 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">奖品等级</label>
                 <div class="layui-input-block">
-                    <input type="radio" name="level" value="1" title="一等奖" <%=prize.getLevel()==1?"checked":"disabled" %> />
-                    <input type="radio" name="level" value="2" title="二等奖" <%=prize.getLevel()==2?"checked":"disabled" %> />
-                    <input type="radio" name="level" value="3" title="三等奖" <%=prize.getLevel()==3?"checked":"disabled" %> />
-                    <input type="radio" name="level" value="0" title="不分等级" <%=prize.getLevel()==0?"checked":"disabled" %> />
+                    <input type="radio" name="level" value="1" title="一等奖" <%=prize.getLevel()==1?"checked":"" %> />
+                    <input type="radio" name="level" value="2" title="二等奖" <%=prize.getLevel()==2?"checked":"" %> />
+                    <input type="radio" name="level" value="3" title="三等奖" <%=prize.getLevel()==3?"checked":"" %> />
+                    <input type="radio" name="level" value="0" title="不分等级" <%=prize.getLevel()==0?"checked":"" %> />
                 </div>
             </div>
             
                <div class="layui-form-item">
-                <label class="layui-form-label">奖品图片</label>
+                <label class="layui-form-label" >奖品图片</label>
                 <div class="layui-input-block">
-                    <input type="file" name="image" />
+                	 <img class="prizeImg" style="height:200px;witdh:200px;" src="/lottery/img/prizes/<%=prize.getImage()%>" />
+                	 <input type="file" name="image" />
                 </div>
             </div>
             <div class="layui-form-item layui-form-text">
@@ -40,10 +42,10 @@
                 <div class="layui-input-block">
                 </div>
             </div>
-
             <div class="layui-form-item">
                 <div class="layui-input-block">
-                    <button class="layui-btn" type="submit" >立即提交</button>
+                    <button class="layui-btn" id="button1" onclick="edit()">编辑信息</button>
+                    <button class="layui-btn" type="submit" >提交</button>
                 </div>
             </div>
         </form>
@@ -57,4 +59,19 @@
             , laydate = layui.laydate;
         form.render();
     });
+    document.querySelector('#button1').addEventListener('click',function(){
+        var button=this;
+        button.setAttribute('disabled',true);
+    },false);
+    function edit() {
+    	document.getElementsByName("desc")[0].removeAttribute("readonly");
+    	let inputs = document.getElementsByTagName("input");
+    	console.log(inputs);
+    	for(i = 0;i < inputs.length;i++) {
+    		inputs[i].removeAttribute("readonly");
+    		inputs[i].removeAttribute("disabled");
+    		console.log(i);
+    	}
+    	
+    }
 </script>

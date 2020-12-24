@@ -38,14 +38,14 @@
 }
 
 .prize-card {
-	display: block; height : 100%;
+	display: block;
 	color: #fff;
 	background-color: #2f4056;
 	cursor: pointer;
 	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
 	border-radius: 5px;
 	padding: 10px 15px;
-	height: 180px;
+	height: 120px;
 }
 
 .prize-card:hover {
