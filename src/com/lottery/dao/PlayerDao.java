@@ -7,4 +7,5 @@ import com.lottery.entity.Player;
 public interface PlayerDao {
 	void insertPlayer(Player player);
 	List<Player> getPlayers();
+	void resetPlayer();
 }

@@ -105,6 +105,7 @@ a:hover {
 </style>
 <div class="layuimini-container layuimini-page-anim">
 	<div class="layuimini-main layui-top-box">
+	
 		<div class="layui-row layui-col-space10">
 			<%
 			List<Prize> prizes = (List<Prize>) request.getAttribute("prizes");
@@ -180,34 +181,29 @@ a:hover {
 				<div class="layui-col-md12">
 					<blockquote class="layui-elem-quote main_btn">
 						<p>
-							本后台系统基于layui2.5.4以及font-awesome-4.7.0实现。layui开发文档地址：<a
+							欢迎来到Tiger抽奖系统v1.0,本系统界面基于layui实现，layui文档:<a
 								class="layui-btn layui-btn-xs layui-btn-danger" target="_blank"
 								href="http://www.layui.com/doc">layui文档</a>
 						</p>
 						<p>
-							技术交流QQ群（561838086）：<a target="_blank"
-								href="https://jq.qq.com/?_wv=1027&k=5JRGVfe"><img border="0"
-								src="//pub.idqqimg.com/wpa/images/group.png" alt="layuimini"
-								title="layuimini"></a>（加群请备注来源：如gitee、github、官网等）
-						</p>
-						<p>喜欢此后台模板的可以给我的GitHub和Gitee加个Star支持一下</p>
-						<p>
-							GitHub地址：
-							<iframe
-								src="https://ghbtns.com/github-btn.html?user=zhongshaofa&repo=layuimini&type=star&count=true"
-								frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
-							<iframe
-								src="https://ghbtns.com/github-btn.html?user=zhongshaofa&repo=layuimini&type=fork&count=true"
-								frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+							<span class="label layui-bg-red">!!!</span>
+							开启新一次抽奖时请前往控制台重置抽奖系统
 						</p>
 						<p>
-							Gitee地址：<a href="https://gitee.com/zhongshaofa/layuimini"
-								target="_blank"><img
-								src="https://gitee.com/zhongshaofa/layuimini/badge/star.svg?theme=dark"
-								alt="star"></a> <a
-								href="https://gitee.com/zhongshaofa/layuimini" target="_blank"><img
-								src="https://gitee.com/zhongshaofa/layuimini/badge/fork.svg?theme=dark"
-								alt="fork"></a>
+							使用说明：
+						</p>
+						<p> <span class="label layui-bg-blue">1</span>点击上方添加奖品按钮以添加新的奖品，最多设置三件</p>
+						<p>
+						 <span class="label layui-bg-red">2</span>
+							进入控制台进行相关设置
+						</p>
+						<p>
+						 <span class="label layui-bg-orange">3</span>
+						用户界面显示所有参与用户
+						</p>
+						<p>
+						点击开始抽奖进行抽奖
+						 <span class="label layui-bg-blue">Go!</span>
 						</p>
 					</blockquote>
 				</div>

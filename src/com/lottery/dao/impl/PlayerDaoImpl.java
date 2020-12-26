@@ -21,7 +21,7 @@ public class PlayerDaoImpl implements PlayerDao {
 	@Override
 	public List<Player> getPlayers() {
 		// TODO Auto-generated method stub
-		String sql = "select * from player";
+		String sql = "select * from player order by id desc";
 		ResultSet rs = BaseDao.executeQuery(sql);
 		List<Player> list = new ArrayList<>();
 		try {
@@ -37,6 +37,13 @@ public class PlayerDaoImpl implements PlayerDao {
 			// TODO Auto-generated catch block
 			throw new RuntimeException(e);
 		}
+	}
+
+	@Override
+	public void resetPlayer() {
+		// TODO Auto-generated method stub
+		String sql = "truncate player";
+		BaseDao.executeUpdate(sql);
 	}
 
 }

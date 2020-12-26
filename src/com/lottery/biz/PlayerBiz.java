@@ -7,4 +7,5 @@ import com.lottery.entity.Player;
 public interface PlayerBiz {
 	void addPlayer(Player player);
 	List<Player> getPlayer();
+	void resetPlayer();
 }

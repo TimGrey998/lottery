@@ -1,6 +1,7 @@
 package com.lottery.action;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -38,7 +39,6 @@ public class Play extends HttpServlet {
 		System.out.println(request.getMethod());
 		switch(request.getMethod().toLowerCase()) {
 		case "get": 
-			request.getRequestDispatcher("/WEB-INF/page/login.jsp").forward(request, response);
 			break;
 		case "post":
 			Player player = new Player();
@@ -46,8 +46,10 @@ public class Play extends HttpServlet {
 			//insert into db
 			PlayerBiz biz = new PlayerBizImpl();
 			biz.addPlayer(player);
-			System.out.println("添加成功");
-			request.getRequestDispatcher("/WEB-INF/page/success.jsp").forward(request, response);
+			List<Player> players = biz.getPlayer();
+			int id = players.size();
+			System.out.print(id);
+			response.sendRedirect("/lottery/success.jsp?id="+id);
 			break;
 		}
 	}

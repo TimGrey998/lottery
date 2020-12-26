@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.lottery.biz.WiningBiz;
 import com.lottery.biz.impl.WiningBizImpl;
+import com.lottery.dao.BaseDao;
 import com.lottery.entity.Wining;
 @WebServlet("/backToMain")
 public class BackToMain extends HttpServlet {
@@ -34,6 +35,7 @@ public class BackToMain extends HttpServlet {
 			String res = request.getParameter("res");
 			String len = request.getParameter("len");
 			String levels = request.getParameter("levels");
+			String sql = "update wining set winingIds =? where id=1";
 			System.out.println("result"+res);
 			System.out.println("len"+len);
 			System.out.println("levels"+levels);
@@ -43,6 +45,7 @@ public class BackToMain extends HttpServlet {
 			win.setWiningMembers(res);
 			win.setWiningLevels(levels);
 			biz.insertWining(win);
+			BaseDao.executeUpdate(sql,res);
 			response.sendRedirect("/lottery/main.jsp");
 			break;
 		}

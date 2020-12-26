@@ -21,15 +21,15 @@ public class WiningListDaoImpl implements WiningListDao {
 	@Override
 	public List<Wining> getWining() {
 		// TODO Auto-generated method stub
-		String sql = "select * from wininglist";
+		String sql = "select * from wininglist order by id desc";
 		try {
 			ResultSet rs = BaseDao.executeQuery(sql);
 			List<Wining> list = new ArrayList<>();
 			while(rs.next()) {
 				Wining win = new Wining();
-				win.setSumMembers(rs.getInt("sumMemebers"));
-				win.setWiningMembers(rs.getString("WiningMembers"));
-				win.setWiningLevels(rs.getString("winingLevel"));
+				win.setSumMembers(rs.getInt("sumMembers"));
+				win.setWiningMembers(rs.getString("winingMembers"));
+				win.setWiningLevels(rs.getString("winingLevels"));
 				list.add(win);
 			}			
 			rs.close();

@@ -22,4 +22,10 @@ public class PlayerBizImpl implements PlayerBiz {
 		return players;
 	}
 
+	@Override
+	public void resetPlayer() {
+		// TODO Auto-generated method stub
+		dao.resetPlayer();
+	}
+
 }

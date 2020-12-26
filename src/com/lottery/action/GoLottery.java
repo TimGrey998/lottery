@@ -14,6 +14,7 @@ import com.lottery.biz.ConsoleBiz;
 import com.lottery.biz.PlayerBiz;
 import com.lottery.biz.impl.ConsoleBizImpl;
 import com.lottery.biz.impl.PlayerBizImpl;
+import com.lottery.dao.BaseDao;
 import com.lottery.entity.Level;
 import com.lottery.entity.Player;
 
@@ -40,6 +41,7 @@ public class GoLottery extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
+		String sql = "update wining set winingIds=null where id = 1";
 		switch(request.getMethod().toLowerCase()) {
 		case "get":
 			PlayerBiz playerbiz = new PlayerBizImpl();
@@ -49,6 +51,7 @@ public class GoLottery extends HttpServlet {
 			Level level = levelbiz.getLevel();
 			request.setAttribute("players", players);
 			request.setAttribute("level", level);
+			BaseDao.executeUpdate(sql);
 			request.getRequestDispatcher("/WEB-INF/page/lottery/lottery.jsp").forward(request, response);;
 			break;
 		case "post":

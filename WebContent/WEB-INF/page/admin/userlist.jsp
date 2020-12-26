@@ -47,6 +47,7 @@
     		<div>
     			<button  class="layui-btn showQr">二维码</button>
     			<button  class="layui-btn" onclick="myrefresh()">刷新</button>
+    			<button  class="layui-btn" onclick="resetdb()">清空</button>
     		</div>
     	</div>
     	<div class="layui-row layui-col-space10">
@@ -86,8 +87,14 @@
     	        content: img
     	      }); 
     	  });
+    	  
     	});
-
+	function resetdb() {
+		var r  = confirm("确定要清空吗");
+		if(r == true) {
+			window.location.href="/lottery/resetPlayer"	
+		}
+	}
     function myrefresh(){
     	location.reload();
     }

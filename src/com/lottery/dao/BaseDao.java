@@ -12,9 +12,9 @@ import javax.sql.rowset.RowSetProvider;
 public class BaseDao {
 	private static String driverClass = "com.mysql.cj.jdbc.Driver"; // 5.0/8.0
 	// jdbc:mysql://<host>:<port>/<database_name>
-	private static String url = "jdbc:mysql://localhost:3306/lotterydb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC"; // 5.0/8.0
-	private static String user = "root";
-	private static String password = "123456";
+	private static String url = "jdbc:mysql://39.107.31.175:3306/lotterydb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC"; // 5.0/8.0
+	private static String user = "gyf";
+	private static String password = "1234";
 
 	public static Connection getConnection() {
 		try {

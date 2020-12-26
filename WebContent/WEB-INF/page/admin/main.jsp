@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>layuimini-单页版 v2 - 基于Layui的后台管理系统前端模板</title>
+    <title>TigerLottery</title>
     <meta name="keywords" content="layuimini,layui,layui模板,layui后台,后台模板,admin,admin模板,layui mini">
     <meta name="description" content="layuimini基于layui的轻量级前端后台管理框架，最简洁、易用的后台框架模板，面向所有层次的前后端程序,只需提供一个接口就直接初始化整个框架，无需复杂操作。">
     <meta name="renderer" content="webkit">
@@ -14,7 +14,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
-    <link rel="icon" href="images/favicon.ico">
+    <link rel="icon" href="/lottery/layui/images/logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="/lottery/layui/lib/layui-v2.5.5/css/layui.css" media="all">
     <link rel="stylesheet" href="/lottery/layui/lib/font-awesome-4.7.0/css/font-awesome.min.css" media="all">
     <link rel="stylesheet" href="/lottery/layui/css/layuimini.css?v=2.0.1" media="all">
